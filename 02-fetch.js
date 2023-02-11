@@ -8,4 +8,22 @@ if (!fetch) {
 
  ******************************************************************************/
 
-// Your code here
+const headers = {
+  "Content-Type": "application/json"
+}
+
+const body = JSON.stringify({
+  "color": "green"
+})
+
+const options = {
+  method: "PUT",
+  headers,
+  body
+}
+
+const url = "/colors/1"
+
+fetch(url, options)
+.then(res => res.json())
+.then(data => console.log(data))

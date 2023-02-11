@@ -10,7 +10,19 @@ const growPlant = makePromise('growPlant');
 
  ******************************************************************************/
 
-// Your code here
+// .then chaining
+// function potPlant(seed) {
+//   addSoil()
+//   .then(() => plantSeed(seed))
+//   .then(plant => growPlant(plant))
+// }
+
+//async await
+async function potPlant(seed) {
+  await addSoil()
+  const plant = await plantSeed(seed)
+  return await growPlant(plant)
+}
 
 
 /*******************************************************************************
